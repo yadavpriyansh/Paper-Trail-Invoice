@@ -1,0 +1,126 @@
+/* Full-height root */
+html, body, #root {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: var(--bg); /* dark bg everywhere */
+    color: var(--text);
+    font-family: var(--font);
+}
+
+/* Variables */
+:root {
+    --bg: #0f1115;
+    --panel: #151821;
+    --panel-2: #1b1f2a;
+    --text: #e8eaf0;
+    --muted: #a7adbb;
+    --accent: #8a63f6;
+    --accent-2: #09c6f9;
+    --border: #2a2f3a;
+    --font: ui-sans-serif, Inter, "JetBrains Sans", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+    --container: 1080px;
+}
+
+/* Page wrapper fills full screen */
+.jb-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg); /* extend dark bg all the way */
+}
+
+/* Hero */
+.jb-hero {
+    padding: 60px 20px;
+    text-align: center;
+    position: relative;
+    background: var(--bg); /* match main bg */
+}
+
+.jb-hero-badge {
+    background: rgba(138,99,246,0.15);
+    color: #cfc7ff;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 12px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    border: 1px solid rgba(138,99,246,0.35);
+}
+
+.jb-hero-title {
+    margin: 20px 0 10px;
+    font-size: clamp(28px, 5vw, 42px);
+    font-weight: 750;
+    letter-spacing: -0.02em;
+}
+
+.jb-hero-sub {
+    color: var(--muted);
+    max-width: 720px;
+    margin: 0 auto 24px;
+    font-size: clamp(16px, 2.5vw, 18px);
+}
+
+.jb-hero-accent {
+    position: absolute;
+    inset: -150px -100px auto auto;
+    width: 420px; height: 420px;
+    background: radial-gradient(60% 60% at 70% 30%, rgba(9,198,249,0.4), rgba(138,99,246,0.15) 60%, transparent 70%);
+    filter: blur(30px);
+    pointer-events: none;
+}
+
+/* Privacy & Contact sections */
+.jb-faq, .jb-contact {
+    padding: 60px 24px;
+    background: var(--bg); /* consistent bg */
+}
+.jb-faq h2, .jb-contact h2 { font-size: 28px; margin-bottom: 14px; }
+.jb-faq p, .jb-contact p { color: var(--muted); }
+
+/* Buttons */
+.jb-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: 10px;
+    padding: 12px 20px;
+    font-weight: 600;
+    border: 1px solid var(--border);
+    background: var(--panel);
+    color: var(--text);
+    transition: transform .08s ease, background .2s ease, border-color .2s ease;
+}
+.jb-btn:hover { transform: translateY(-1px); border-color: #3a4152; }
+.jb-btn-primary {
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    border: none;
+    color: white;
+}
+
+/* Container */
+.jb-container {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Footer (grey strip only) */
+.jb-footer {
+    margin-top: auto;
+    background: #151821; /* grey strip */
+    border-top: 1px solid var(--border);
+    padding: 16px 0;
+    text-align: center;
+}
+.jb-footer nav a {
+    margin: 0 10px;
+    color: var(--muted);
+}
